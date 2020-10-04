@@ -15,6 +15,7 @@ MainWidget::MainWidget(QWidget *parent)
     //    y = a * cos (b * x) + c * cos (d * x)
     plot->addCurve(QwtPlotCurve::Lines, QPen(Qt::cyan, 0.8), function1(1, 1, 1, 1));
 
+    setWindowTitle("Пример графика");
 }
 
 MainWidget::~MainWidget()
@@ -63,4 +64,22 @@ void MainWidget::on_cLe_editingFinished()
 void MainWidget::on_dLe_editingFinished()
 {
     updateCurve();
+}
+
+void MainWidget::on_xGridChB_toggled(bool)
+{
+    plot->setGrid(
+                ui->xGridChB->isChecked(),
+                ui->yGridChb->isChecked(),
+                QPen(Qt::black, 0.25, Qt::DashLine)
+                );
+}
+
+void MainWidget::on_yGridChb_toggled(bool)
+{
+    plot->setGrid(
+                ui->xGridChB->isChecked(),
+                ui->yGridChb->isChecked(),
+                QPen(Qt::black, 0.25, Qt::DashLine)
+                );
 }

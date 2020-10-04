@@ -25,6 +25,10 @@ private slots:
 
     void on_dLe_editingFinished();
 
+    void on_xGridChB_toggled(bool);
+
+    void on_yGridChb_toggled(bool);
+
 private:
     Ui::MainWidget *ui;
     MyPlot *plot;

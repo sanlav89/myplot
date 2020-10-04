@@ -3,6 +3,7 @@
 
 #include <qwt_plot.h>
 #include <qwt_plot_curve.h>
+#include <qwt_plot_grid.h>
 
 class MyPlot : public QwtPlot
 {
@@ -18,10 +19,11 @@ public:
             );
 
     void updateCurveValues(int curveId, const QVector<QPointF> &values);
+    void setGrid(bool xEnabled, bool yEnabled, const QPen &pen);
 
 private:
     QVector<QwtPlotCurve *> m_curves;
-
+    QwtPlotGrid *m_grid;
 
 };
 

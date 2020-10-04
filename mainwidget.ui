@@ -35,16 +35,32 @@
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
-     <widget class="QLineEdit" name="aLe"/>
+     <widget class="QLineEdit" name="aLe">
+      <property name="text">
+       <string>1</string>
+      </property>
+     </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="bLe"/>
+     <widget class="QLineEdit" name="bLe">
+      <property name="text">
+       <string>1</string>
+      </property>
+     </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="cLe"/>
+     <widget class="QLineEdit" name="cLe">
+      <property name="text">
+       <string>1</string>
+      </property>
+     </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="dLe"/>
+     <widget class="QLineEdit" name="dLe">
+      <property name="text">
+       <string>1</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -87,6 +103,45 @@
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>720</x>
+     <y>200</y>
+     <width>161</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Сетка</string>
+   </property>
+   <widget class="QWidget" name="verticalLayoutWidget_4">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>20</y>
+      <width>161</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_4">
+     <item>
+      <widget class="QCheckBox" name="xGridChB">
+       <property name="text">
+        <string>Вертикальная сетка</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="yGridChb">
+       <property name="text">
+        <string>Горизонтальная сетка</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
  </widget>
  <resources/>
