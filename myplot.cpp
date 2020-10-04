@@ -9,6 +9,10 @@ MyPlot::MyPlot(const QString &title, QWidget *parent) :
     m_grid->enableX(false);
     m_grid->enableY(false);
     m_grid->attach(this);
+
+    // Шрифт осей
+    setAxisFont(QwtPlot::xBottom,  QFont("Helvetica", 8));
+    setAxisFont(QwtPlot::yLeft,  QFont("Helvetica", 8));
 }
 
 MyPlot::~MyPlot()
@@ -43,4 +47,20 @@ void MyPlot::setGrid(bool xEnabled, bool yEnabled, const QPen &pen)
     m_grid->enableY(yEnabled);
     m_grid->setPen(pen);
     replot();
+}
+
+void MyPlot::setXLabel(const QString &label)
+{
+    QwtText t;
+    t.setText(label);
+    t.setFont(QFont("Helvetica", 8));
+    setAxisTitle(QwtPlot::xBottom, t);
+}
+
+void MyPlot::setYLabel(const QString &label)
+{
+    QwtText t;
+    t.setText(label);
+    t.setFont(QFont("Helvetica", 8));
+    setAxisTitle(QwtPlot::yLeft, t);
 }

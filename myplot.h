@@ -20,6 +20,8 @@ public:
 
     void updateCurveValues(int curveId, const QVector<QPointF> &values);
     void setGrid(bool xEnabled, bool yEnabled, const QPen &pen);
+    void setXLabel(const QString &label);
+    void setYLabel(const QString &label);
 
 private:
     QVector<QwtPlotCurve *> m_curves;

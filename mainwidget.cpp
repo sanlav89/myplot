@@ -7,13 +7,15 @@ MainWidget::MainWidget(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::MainWidget)
 {
+    // Форма
     ui->setupUi(this);
+
+    // Объект графика
     plot = new MyPlot("y = a * cos (b * x) + c * cos (d * x)", this);
     ui->verticalLayout->addWidget(plot);
-
-    // График функции:
-    //    y = a * cos (b * x) + c * cos (d * x)
     plot->addCurve(QwtPlotCurve::Lines, QPen(Qt::cyan, 0.8), function1(1, 1, 1, 1));
+    plot->setXLabel("Частота");
+    plot->setYLabel("Амплитуда");
 
     setWindowTitle("Пример графика");
 }
@@ -23,6 +25,8 @@ MainWidget::~MainWidget()
     delete ui;
 }
 
+// График функции:
+//    y = a * cos (b * x) + c * cos (d * x)
 QVector<QPointF> MainWidget::function1(double a, double b, double c, double d)
 {
     QVector<QPointF> result;
