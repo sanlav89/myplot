@@ -13,10 +13,11 @@ MainWidget::MainWidget(QWidget *parent)
     // Объект графика
     plot = new MyPlot("y = a * cos (b * x) + c * cos (d * x)", this);
     ui->verticalLayout->addWidget(plot);
-    plot->addCurve(QwtPlotCurve::Lines, QPen(Qt::cyan, 0.8), function1(1, 1, 1, 1));
+    plot->addCurve(QwtPlotCurve::Lines, QPen(Qt::cyan, 1), function1(1, 1, 1, 1));
     plot->setXLabel("Частота");
     plot->setYLabel("Амплитуда");
 
+    // Название окна программы
     setWindowTitle("Пример графика");
 }
 
@@ -25,8 +26,10 @@ MainWidget::~MainWidget()
     delete ui;
 }
 
-// График функции:
+// Функция генерирует тестовый массив по формуле:
 //    y = a * cos (b * x) + c * cos (d * x)
+// Функция возвращает массив точек QPointF(x, y)
+// В таком виде удобно передавать данные для отрисовки на графике
 QVector<QPointF> MainWidget::function1(double a, double b, double c, double d)
 {
     QVector<QPointF> result;
@@ -40,6 +43,7 @@ QVector<QPointF> MainWidget::function1(double a, double b, double c, double d)
     return result;
 }
 
+// Обновление введенных коэффициентов
 void MainWidget::updateCurve()
 {
     double a = ui->aLe->text().toDouble();
@@ -75,7 +79,7 @@ void MainWidget::on_xGridChB_toggled(bool)
     plot->setGrid(
                 ui->xGridChB->isChecked(),
                 ui->yGridChb->isChecked(),
-                QPen(Qt::black, 0.25, Qt::DashLine)
+                QPen(Qt::white, 0.25, Qt::DashLine)
                 );
 }
 
@@ -84,6 +88,6 @@ void MainWidget::on_yGridChb_toggled(bool)
     plot->setGrid(
                 ui->xGridChB->isChecked(),
                 ui->yGridChb->isChecked(),
-                QPen(Qt::black, 0.25, Qt::DashLine)
+                QPen(Qt::white, 0.25, Qt::DashLine)
                 );
 }
