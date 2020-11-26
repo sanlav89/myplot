@@ -18,11 +18,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     main.cpp \
     mainwidget.cpp \
-    myplot.cpp
+    myplot.cpp \
+    myzoomer.cpp
 
 HEADERS += \
     mainwidget.h \
-    myplot.h
+    myplot.h \
+    myzoomer.h
 
 FORMS += \
     mainwidget.ui
@@ -32,5 +34,5 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-INCLUDEPATH += C:/qwt-6.1.4/include
-LIBS += -LC:/qwt-6.1.4/lib -lqwt
+INCLUDEPATH += C:/qwt-6.1.5/include
+LIBS += -LC:/qwt-6.1.5/lib -lqwt
