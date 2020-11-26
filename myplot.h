@@ -12,18 +12,12 @@ public:
     MyPlot(const QString &title, QWidget *parent = nullptr);
     ~MyPlot();
 
-    // Методы установки/изменения информации на графике
-
     // Добавление кривой на график
     void addCurve(
             QwtPlotCurve::CurveStyle style,
             const QPen &pen,
             const QVector<QPointF> &values
             );
-    // Обновление данных кривой под номером curveId
-    void updateCurveValues(int curveId, const QVector<QPointF> &values);
-    // Включение / выклчение отбражения сетки на графике
-    void setGrid(bool xEnabled, bool yEnabled, const QPen &pen);
     // Установка надписи по оси Х
     void setXLabel(const QString &label);
     // Установка надписи по оси Y
