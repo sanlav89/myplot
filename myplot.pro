@@ -16,15 +16,18 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    analyzerplot.cpp \
     main.cpp \
     mainwidget.cpp \
     myplot.cpp \
     myzoomer.cpp
 
 HEADERS += \
+    analyzerplot.h \
     mainwidget.h \
     myplot.h \
-    myzoomer.h
+    myzoomer.h \
+    types.h
 
 FORMS += \
     mainwidget.ui
